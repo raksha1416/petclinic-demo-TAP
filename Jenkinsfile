@@ -21,6 +21,7 @@ pipeline {
     stage ('Build Docker Image') {
       steps{
         echo "Building Docker Image"
+         dockerImage = docker.build registry + ":$BUILD_NUMBER"
       }
     }
     stage ('Push Docker Image') {
